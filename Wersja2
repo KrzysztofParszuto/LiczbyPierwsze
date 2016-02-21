@@ -1,0 +1,52 @@
+package LiczbyPierwsze;
+
+import java.util.LinkedList;
+import java.util.Random;
+import java.util.Scanner;  
+
+class GetInputFromUser  {  
+	public static void main(String args[])  {  
+
+			//odliczanie czasu, chyba
+			long start,koniec,delta;
+			
+			System.out.println("Wprowadz ilość sprawdzanych liczb :");
+			Scanner in = new Scanner(System.in); 
+			
+
+			int n = in.nextInt();
+
+			//losowanie n liczb
+			LinkedList<Integer> m = new LinkedList<Integer>();
+			Random generator = new Random();
+			start = System.currentTimeMillis();
+			for(int a=0; a<n; a++) {
+				m.add(generator.nextInt(10000));
+			   	double liczbalosowana = (double) m.get(a);
+			
+			   	//System.out.println("wynik liczbalosowana dla sprawdzenia " + liczbalosowana);
+			   	//start = System.currentTimeMillis();
+			   	int p = (int) Math.sqrt(liczbalosowana);
+			   	//int p = liczbalosowana;
+			   	//System.out.println("wynik p dla sprawdzenia " + p);
+	petla:		for(int j=p; j>0; j--){
+					if(j==1){
+						System.out.println("TAK");
+						break petla;
+					}
+					if(n%j==0){
+						System.out.println("NIE");
+						break petla;
+					}
+				}
+			}
+			// dokonczyc, problem z odliczacniem czasy, żeby zmienna "start wyrzucało wlasnie tutaj
+			//koniec = System.currentTimeMillis();
+			//delta = koniec - start;
+			//System.out.println("Czas: " + delta);
+		
+	koniec = System.currentTimeMillis();
+	delta = koniec - start;
+	System.out.println("Czas: " + delta);
+	}
+	}

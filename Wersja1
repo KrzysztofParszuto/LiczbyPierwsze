@@ -48,3 +48,5 @@ class GetInputFromUser  {
 		}
 	}
 }
+
+ystem.out.println("jakas zmiana);

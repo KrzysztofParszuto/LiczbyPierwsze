@@ -49,4 +49,4 @@ class GetInputFromUser  {
 	}
 }
 
-ystem.out.println("jakas zmiana);
+System.out.println("jakas zmiana);
